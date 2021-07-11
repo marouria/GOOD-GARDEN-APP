@@ -1,13 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import {RootScreen as App} from './src/screens/RootScreen';
-import StorybookUIRoot from './storybook';
 
-export function App() {
+export function RootScreen() {
   return (
-    <View>
-      <RootScreen></RootScreen>
+    <View style={styles.container}>
+      <Text>This is Root Screen!</Text>
+      <StatusBar style="auto" />
     </View>
   );
 }
@@ -20,11 +19,3 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
-const SHOW_STORYBOOK = true;
-
-const UI = SHOW_STORYBOOK && __DEV__ ? StorybookUIRoot : App;
-export default UI;
-
-
-
