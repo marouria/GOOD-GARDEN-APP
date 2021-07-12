@@ -29,18 +29,15 @@ AppRegistry.registerComponent("%GOOD-GARDEN-APP%", () => StorybookUIRoot);
 // setup Typescript
 // .storybook/main.js
 
-// .storybook/main.js
-
 module.exports = {
-  stories: [],
-  addons: [],
   typescript: {
+    check: false,
+    checkOptions: {},
     reactDocgen: "react-docgen-typescript",
     reactDocgenTypescriptOptions: {
-      compilerOptions: {
-        allowSyntheticDefaultImports: true,
-        esModuleInterop: false,
-      },
+      shouldExtractLiteralValuesFromEnum: true,
+      propFilter: (prop) =>
+        prop.parent ? !/node_modules/.test(prop.parent.fileName) : true,
     },
   },
 };
