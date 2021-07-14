@@ -1,12 +1,8 @@
 import React from "react";
 import { View, Text, SafeAreaView, ScrollView } from "react-native";
 import AppLayout from "../components/AppLayout";
-import { usePlants } from "../hooks/usePlants";
 
-interface plantProps {
-  name: string;
-  description: string;
-}
+import { usePlants } from "../hooks/usePlants";
 
 const PlantsFeedScreen = () => {
   const { data } = usePlants();
