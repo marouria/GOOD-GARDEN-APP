@@ -1,16 +1,21 @@
 import React from "react";
-import { Text, SafeAreaView } from "react-native";
+import { View, Text, SafeAreaView, ScrollView } from "react-native";
+import AppLayout from "../components/AppLayout";
+
 import { usePlants } from "../hooks/usePlants";
 
 const PlantsFeedScreen = () => {
   const { data } = usePlants();
+  console.log(data);
 
   return (
-    <SafeAreaView>
-      {data.results.map((plant) => {
-        return <Text>{plant.name}</Text>;
-      })}
-    </SafeAreaView>
+    <AppLayout>
+      <SafeAreaView>
+        {data.results.map((plant) => {
+          return <Text>{plant.name}</Text>;
+        })}
+      </SafeAreaView>
+    </AppLayout>
   );
 };
 
