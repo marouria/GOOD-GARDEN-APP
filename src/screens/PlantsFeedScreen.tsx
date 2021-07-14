@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text, SafeAreaView } from "react-native";
+import { View, Text, SafeAreaView, ScrollView } from "react-native";
+import AppLayout from "../components/AppLayout";
 import { usePlants } from "../hooks/usePlants";
 
 interface plantProps {
@@ -12,11 +13,13 @@ const PlantsFeedScreen = () => {
   console.log(data);
 
   return (
-    <SafeAreaView>
-      {data.results.map((plant) => {
-        return <Text>{plant.name}</Text>;
-      })}
-    </SafeAreaView>
+    <AppLayout>
+      <SafeAreaView>
+        {data.results.map((plant) => {
+          return <Text>{plant.name}</Text>;
+        })}
+      </SafeAreaView>
+    </AppLayout>
   );
 };
 
