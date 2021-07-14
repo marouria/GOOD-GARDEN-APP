@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, SafeAreaView } from "react-native";
 import { usePlants } from "../hooks/usePlants";
 
 interface plantProps {
@@ -9,14 +9,14 @@ interface plantProps {
 
 const PlantsFeedScreen = () => {
   const { data } = usePlants();
+  console.log(data);
 
   return (
-    <View>
-      <Text></Text>
-      <Text>Hello</Text>
-      <Text>Hello</Text>
-      <Text>Hello</Text>
-    </View>
+    <SafeAreaView>
+      {data.results.map((plant) => {
+        return <Text>{plant.name}</Text>;
+      })}
+    </SafeAreaView>
   );
 };
 
