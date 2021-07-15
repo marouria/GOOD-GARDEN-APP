@@ -32,14 +32,33 @@ const PlantsFeedScreen = () => {
           const LeftContent = (props) => {
             if (plant.season === "winter") {
               return (
-                <Avatar.Icon {...props} icon="snowflake" color="lightblue" />
+                <Avatar.Icon
+                  {...props}
+                  icon="snowflake"
+                  color="lightblue"
+                  backgroundColor="none"
+                />
               );
             }
             if (plant.season === "summer") {
               return (
-                <Avatar.Icon {...props} icon="weather-sunny" color="orange" />
+                <Avatar.Icon
+                  {...props}
+                  icon="white-balance-sunny"
+                  color="orange"
+                  backgroundColor="none"
+                />
               );
             }
+          };
+
+          const RightContent = () => {
+            return (
+              <Text>
+                {plant.price.cents}
+                {plant.price.currency_iso}
+              </Text>
+            );
           };
           return (
             <Card>
@@ -47,10 +66,16 @@ const PlantsFeedScreen = () => {
               <Button
                 style={styles.viewPlantButton}
                 icon="eye"
-                mode="contained"
+                color="grey"
                 onPress={handlePress}
               />
-              <Card.Title title={plant.name} subtitle="" left={LeftContent} />
+
+              <Card.Title
+                title={plant.name}
+                subtitle=""
+                right={RightContent}
+                left={LeftContent}
+              />
             </Card>
           );
         })}
