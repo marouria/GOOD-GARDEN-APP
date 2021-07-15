@@ -12,8 +12,6 @@ import AppLayout from "../components/AppLayout";
 
 import { usePlants } from "../hooks/usePlants";
 
-const LeftContent = (props) => <Avatar.Icon {...props} icon="camera" />;
-
 const PlantsFeedScreen = () => {
   const { isLoading, isError, data } = usePlants();
 
@@ -31,12 +29,24 @@ const PlantsFeedScreen = () => {
     <AppLayout>
       <SafeAreaView>
         {data.results.map((plant) => {
+          const LeftContent = (props) => {
+            if (plant.season === "winter") {
+              return (
+                <Avatar.Icon {...props} icon="snowflake" color="lightblue" />
+              );
+            }
+            if (plant.season === "summer") {
+              return (
+                <Avatar.Icon {...props} icon="weather-sunny" color="orange" />
+              );
+            }
+          };
           return (
-            <Card style={styles.card}>
+            <Card>
               <Card.Cover source={{ uri: plant.img_url }} />
               <Button
-                style={styles.button}
-                icon="camera"
+                style={styles.viewPlantButton}
+                icon="eye"
                 mode="contained"
                 onPress={handlePress}
               />
@@ -50,7 +60,7 @@ const PlantsFeedScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  button: {
+  viewPlantButton: {
     position: "absolute",
     top: 10,
   },
