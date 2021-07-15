@@ -5,7 +5,15 @@ import AppLayout from "../components/AppLayout";
 import { usePlants } from "../hooks/usePlants";
 
 const PlantsFeedScreen = () => {
-  const { data } = usePlants();
+  const { isLoading, isError, data } = usePlants();
+
+  if (isLoading) {
+    return <Text>Loading...</Text>;
+  }
+
+  if (isError) {
+    return <Text>Error...</Text>;
+  }
 
   return (
     <AppLayout>
