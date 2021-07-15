@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text, SafeAreaView, ScrollView } from "react-native";
+import { View, Text, SafeAreaView, ScrollView, Button } from "react-native";
+import { Card } from "react-native-paper";
 import AppLayout from "../components/AppLayout";
 
 import { usePlants } from "../hooks/usePlants";
@@ -19,7 +20,16 @@ const PlantsFeedScreen = () => {
     <AppLayout>
       <SafeAreaView>
         {data.results.map((plant) => {
-          return <Text>{plant.name}</Text>;
+          return (
+            <Card>
+              <Card.Title
+                title={plant.name}
+                subtitle={plant.season}
+              ></Card.Title>
+              <Card.Cover source={{ uri: plant.img_url }} />
+              <Card.Actions>{/* <Button>Ok</Button> */}</Card.Actions>
+            </Card>
+          );
         })}
       </SafeAreaView>
     </AppLayout>
