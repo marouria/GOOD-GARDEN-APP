@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { Avatar, Card } from "react-native-paper";
 import { PlantProps } from "../../api/types";
 
@@ -7,7 +7,7 @@ export interface PlantCardProps {
   plant: PlantProps;
 }
 
-const PlantsCard = ({ plant }: PlantCardProps) => {
+const PlantCard = ({ plant }: PlantCardProps) => {
   function handleGoToDetails() {}
 
   const LeftContent = (props) => {
@@ -66,4 +66,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PlantsCard;
+export default PlantCard;
