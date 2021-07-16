@@ -6,6 +6,7 @@ import {
   StyleSheet,
   ScrollView,
   ImageBackground,
+  TouchableOpacity,
 } from "react-native";
 import { Avatar, Card, Title, Button } from "react-native-paper";
 import AppLayout from "../components/AppLayout";
@@ -23,7 +24,7 @@ const PlantsFeedScreen = () => {
     return <Text>Error...</Text>;
   }
 
-  function handlePress() {}
+  function handleGoToDetails() {}
 
   return (
     <AppLayout>
@@ -61,22 +62,17 @@ const PlantsFeedScreen = () => {
             );
           };
           return (
-            <Card>
-              <Card.Cover source={{ uri: plant.img_url }} />
-              <Button
-                style={styles.viewPlantButton}
-                icon="eye"
-                color="grey"
-                onPress={handlePress}
-              />
-
-              <Card.Title
-                title={plant.name}
-                subtitle=""
-                right={RightContent}
-                left={LeftContent}
-              />
-            </Card>
+            <TouchableOpacity onPress={handleGoToDetails}>
+              <Card>
+                <Card.Cover source={{ uri: plant.img_url }} />
+                <Card.Title
+                  title={plant.name}
+                  subtitle=""
+                  right={RightContent}
+                  left={LeftContent}
+                />
+              </Card>
+            </TouchableOpacity>
           );
         })}
       </SafeAreaView>
