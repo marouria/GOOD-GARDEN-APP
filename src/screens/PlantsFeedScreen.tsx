@@ -63,11 +63,11 @@ const PlantsFeedScreen = () => {
           };
           return (
             <TouchableOpacity onPress={handleGoToDetails}>
-              <Card>
+              <Card style={styles.containerCard}>
                 <Card.Cover source={{ uri: plant.img_url }} />
                 <Card.Title
+                  style={styles.infosContainer}
                   title={plant.name}
-                  subtitle=""
                   right={RightContent}
                   left={LeftContent}
                 />
@@ -81,14 +81,11 @@ const PlantsFeedScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  viewPlantButton: {
-    position: "absolute",
-    top: 10,
+  containerCard: {
+    margin: 24,
   },
-  title: {
-    textAlign: "right",
-    // position: "absolute",
-    // top: 0,
+  infosContainer: {
+    padding: 10,
   },
 });
 
