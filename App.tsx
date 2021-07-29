@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import { RootScreen as App } from "./src/screens/RootScreen";
 import StorybookUIRoot from "./storybook";
 
