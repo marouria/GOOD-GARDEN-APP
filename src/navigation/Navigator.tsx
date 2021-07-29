@@ -1,14 +1,17 @@
 import { createStackNavigator } from "@react-navigation/stack";
+import PlantDetailsScreen from "../screens/PlantDetailsScreen";
+import PlantsFeedScreen from "../screens/PlantsFeedScreen";
+import { AppRoutes } from "./AppRoutes";
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import BottomTabNavigator from "./BottomTabNavigator";
 
-const Stack = createStackNavigator();
-
-function PlantStack() {
+function Navigator() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Notifications" component={Notifications} />
-      <Stack.Screen name="Profile" component={Profile} />
-      <Stack.Screen name="Settings" component={} />
-    </Stack.Navigator>
+    <NavigationContainer>
+      <BottomTabNavigator />
+    </NavigationContainer>
   );
 }
+
+export default Navigator;
