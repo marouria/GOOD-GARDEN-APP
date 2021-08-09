@@ -1,14 +1,21 @@
-import React from "react";
-import { Text, SafeAreaView } from "react-native";
+import React, { Component } from "react";
+import { Text, SafeAreaView, StyleSheet } from "react-native";
 import AppLayout from "../components/AppLayout";
 import PlantCard from "../components/PlantCard";
 import { usePlants } from "../hooks/usePlants";
+import Spinner from "react-native-loading-spinner-overlay";
 
 const PlantsFeedScreen = () => {
   const { isLoading, isError, data } = usePlants();
 
   if (isLoading) {
-    return <Text>Loading...</Text>;
+    return (
+      <Spinner
+        visible={true}
+        textContent={"Loading..."}
+        textStyle={styles.spinnerTextStyle}
+      />
+    );
   }
 
   if (isError) {
@@ -25,5 +32,11 @@ const PlantsFeedScreen = () => {
     </AppLayout>
   );
 };
+
+const styles = StyleSheet.create({
+  spinnerTextStyle: {
+    color: "#FFF",
+  },
+});
 
 export default PlantsFeedScreen;

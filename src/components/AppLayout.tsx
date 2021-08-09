@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import { View, Text, ScrollView, StyleSheet } from "react-native";
 import Constants from "expo-constants";
+import { BottomTabBar } from "@react-navigation/bottom-tabs";
 
 interface Props {
   children?: ReactNode;
