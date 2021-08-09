@@ -4,9 +4,10 @@ import PlantsFeedScreen from "../screens/PlantsFeedScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import { AppRoutes } from "./AppRoutes";
 import React from "react";
+import { createStackNavigator } from "@react-navigation/stack";
 
 const Tab = createBottomTabNavigator();
-const PlantStack = createBottomTabNavigator();
+const PlantStack = createStackNavigator();
 
 function PlantNavigator() {
   return (
@@ -28,7 +29,7 @@ const BottomTabNavigator = () => {
     <Tab.Navigator>
       <Tab.Screen
         name={AppRoutes.PLANTS_FEED_SCREEN}
-        component={PlantsFeedScreen}
+        component={PlantNavigator}
       />
       <Tab.Screen name={AppRoutes.PROFILE} component={ProfileScreen} />
     </Tab.Navigator>
