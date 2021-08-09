@@ -10,6 +10,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@klarna/react-native-vector-drawable": "^0.3.0",
     "@react-native-community/masked-view": "0.1.10",
     "@react-navigation/bottom-tabs": "^5.11.11",
     "@react-navigation/native": "^5.9.4",
@@ -27,6 +28,8 @@
     "react-native-safe-area-context": "3.2.0",
     "react-native-screens": "~3.4.0",
     "react-native-svg": "^12.1.1",
+    "react-native-table-component": "^1.2.1",
+    "react-native-vector-image": "^0.3.2",
     "react-native-web": "~0.13.12",
     "react-query": "^3.18.1"
   },
@@ -42,6 +45,7 @@
     "@types/react": "~16.9.35",
     "@types/react-native": "~0.63.2",
     "@types/react-native-loading-spinner-overlay": "^0.5.3",
+    "@types/react-native-table-component": "^1.2.1",
     "@types/storybook__react": "^5.2.1",
     "babel-loader": "^8.2.2",
     "typescript": "~4.0.0"
