@@ -1,14 +1,21 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { Avatar, Card } from "react-native-paper";
 import { PlantProps } from "../../api/types";
+import { AppRoutes } from "../navigation/AppRoutes";
 
 export interface PlantCardProps {
   plant: PlantProps;
 }
 
 const PlantCard = ({ plant }: PlantCardProps) => {
-  function handleGoToDetails() {}
+  const navigation = useNavigation();
+  function handleGoToDetails() {
+    navigation.navigate(AppRoutes.PLANT_DETAILS_SCREEN, {
+      plantId: plant,
+    });
+  }
 
   const LeftContent = (props) => {
     if (plant.season === "winter") {
