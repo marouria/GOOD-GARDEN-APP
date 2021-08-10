@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, Button } from "react-native";
 import AppLayout from "../components/AppLayout";
-import { Avatar, DataTable } from "react-native-paper";
+import { Avatar, DataTable, Headline, Title } from "react-native-paper";
 
 interface Props {
   route: any;
@@ -23,10 +23,12 @@ const PlantDetailsScreen = (props: Props) => {
   return (
     <AppLayout>
       <View>
-        <Text style={{ fontSize: 32, padding: 10 }}>{name}</Text>
+        <Headline style={{ padding: 5, marginTop: 30, fontSize: 34 }}>
+          {name}
+        </Headline>
         <Image
           source={{ uri: img_url }}
-          style={{ width: "100%", height: 300 }}
+          style={{ width: "100%", height: 250 }}
         />
         <DataTable>
           <DataTable.Row style={styles.rowContainer}>
