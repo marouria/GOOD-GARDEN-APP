@@ -4,6 +4,8 @@ import AppLayout from "../components/AppLayout";
 import PlantCard from "../components/PlantCard";
 import { usePlants } from "../hooks/usePlants";
 import Spinner from "react-native-loading-spinner-overlay";
+import { Searchbar, Title } from "react-native-paper";
+import PlantSearchBar from "../components/PlantSearchBar";
 
 const PlantsFeedScreen = () => {
   const { isLoading, isError, data } = usePlants();
@@ -24,6 +26,7 @@ const PlantsFeedScreen = () => {
 
   return (
     <AppLayout>
+      <PlantSearchBar></PlantSearchBar>
       <SafeAreaView>
         {data.results.map((plant) => {
           return <PlantCard plant={plant}></PlantCard>;
