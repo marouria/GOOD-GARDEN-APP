@@ -8,6 +8,7 @@ import PlantsFeedScreen from "../screens/PlantsFeedScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 
 import { AppRoutes } from "./AppRoutes";
+import CalendarScreen from "../screens/CalendarScreen";
 
 const Tab = createMaterialBottomTabNavigator();
 const PlantStack = createStackNavigator();
@@ -32,13 +33,29 @@ const BottomTabNavigator = () => {
     <Tab.Navigator
       activeColor="#f0edf6"
       inactiveColor="#3e2465"
-      barStyle={{ backgroundColor: "#694fad" }}
+      barStyle={{ backgroundColor: "#014034" }}
     >
       <Tab.Screen
         name={AppRoutes.PLANTS_FEED_SCREEN}
         component={PlantNavigator}
+        options={{
+          tabBarIcon: "home",
+        }}
       />
-      <Tab.Screen name={AppRoutes.PROFILE} component={ProfileScreen} />
+      <Tab.Screen
+        name={AppRoutes.CALENDAR_SCREEN}
+        component={CalendarScreen}
+        options={{
+          tabBarIcon: "calendar",
+        }}
+      />
+      <Tab.Screen
+        name={AppRoutes.PROFILE}
+        component={ProfileScreen}
+        options={{
+          tabBarIcon: "account",
+        }}
+      />
     </Tab.Navigator>
   );
 };
