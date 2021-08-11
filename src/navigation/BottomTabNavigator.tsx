@@ -1,12 +1,17 @@
+import React from "react";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
 import PlantDetailsScreen from "../screens/PlantDetailsScreen";
 import PlantsFeedScreen from "../screens/PlantsFeedScreen";
 import ProfileScreen from "../screens/ProfileScreen";
-import { AppRoutes } from "./AppRoutes";
-import React from "react";
-import { createStackNavigator } from "@react-navigation/stack";
 
-const Tab = createBottomTabNavigator();
+import { AppRoutes } from "./AppRoutes";
+import CalendarScreen from "../screens/CalendarScreen";
+import { theme } from "../theme/theme";
+
+const Tab = createMaterialBottomTabNavigator();
 const PlantStack = createStackNavigator();
 
 function PlantNavigator() {
@@ -26,12 +31,32 @@ function PlantNavigator() {
 
 const BottomTabNavigator = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      activeColor={theme.colors.primaryActive}
+      inactiveColor={theme.colors.primaryInactive}
+      barStyle={{ backgroundColor: theme.colors.primary }}
+    >
       <Tab.Screen
         name={AppRoutes.PLANTS_FEED_SCREEN}
         component={PlantNavigator}
+        options={{
+          tabBarIcon: "home",
+        }}
       />
-      <Tab.Screen name={AppRoutes.PROFILE} component={ProfileScreen} />
+      <Tab.Screen
+        name={AppRoutes.CALENDAR_SCREEN}
+        component={CalendarScreen}
+        options={{
+          tabBarIcon: "calendar",
+        }}
+      />
+      <Tab.Screen
+        name={AppRoutes.PROFILE}
+        component={ProfileScreen}
+        options={{
+          tabBarIcon: "account",
+        }}
+      />
     </Tab.Navigator>
   );
 };
