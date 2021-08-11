@@ -1,12 +1,15 @@
+import React from "react";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
 import PlantDetailsScreen from "../screens/PlantDetailsScreen";
 import PlantsFeedScreen from "../screens/PlantsFeedScreen";
 import ProfileScreen from "../screens/ProfileScreen";
-import { AppRoutes } from "./AppRoutes";
-import React from "react";
-import { createStackNavigator } from "@react-navigation/stack";
 
-const Tab = createBottomTabNavigator();
+import { AppRoutes } from "./AppRoutes";
+
+const Tab = createMaterialBottomTabNavigator();
 const PlantStack = createStackNavigator();
 
 function PlantNavigator() {
@@ -26,7 +29,11 @@ function PlantNavigator() {
 
 const BottomTabNavigator = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      activeColor="#f0edf6"
+      inactiveColor="#3e2465"
+      barStyle={{ backgroundColor: "#694fad" }}
+    >
       <Tab.Screen
         name={AppRoutes.PLANTS_FEED_SCREEN}
         component={PlantNavigator}
