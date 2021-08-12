@@ -5,10 +5,13 @@ import PlantCard from "../components/PlantCard";
 import { usePlants } from "../hooks/usePlants";
 import Spinner from "react-native-loading-spinner-overlay";
 import { Searchbar, Title } from "react-native-paper";
-import PlantSearchBar from "../components/PlantSearchBar";
 
 const PlantsFeedScreen = () => {
   const { isLoading, isError, data } = usePlants();
+
+  const [searchQuery, setSearchQuery] = React.useState("");
+
+  const onChangeSearch = (query) => setSearchQuery(query);
 
   if (isLoading) {
     return (
@@ -26,11 +29,17 @@ const PlantsFeedScreen = () => {
 
   return (
     <AppLayout>
-      <PlantSearchBar></PlantSearchBar>
+      <Searchbar
+        placeholder="Search a plant"
+        onChangeText={onChangeSearch}
+        value={searchQuery}
+      />
       <SafeAreaView>
-        {data.results.map((plant) => {
-          return <PlantCard plant={plant}></PlantCard>;
-        })}
+        {data.results
+          .filter((plant) => plant.name.includes(searchQuery))
+          .map((filteredPlant) => {
+            return <PlantCard plant={filteredPlant}></PlantCard>;
+          })}
       </SafeAreaView>
     </AppLayout>
   );
@@ -43,3 +52,6 @@ const styles = StyleSheet.create({
 });
 
 export default PlantsFeedScreen;
+function setFilteredDataSource(filteredData: any) {
+  throw new Error("Function not implemented.");
+}
