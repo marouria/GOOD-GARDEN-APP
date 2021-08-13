@@ -32,9 +32,9 @@ function PlantNavigator() {
 const BottomTabNavigator = () => {
   return (
     <Tab.Navigator
-      activeColor={theme.colors.primaryActive}
-      inactiveColor={theme.colors.primaryInactive}
-      barStyle={{ backgroundColor: theme.colors.primary }}
+      activeColor="white"
+      inactiveColor={theme.colors.primary400}
+      barStyle={{ backgroundColor: theme.colors.primary900 }}
     >
       <Tab.Screen
         name={AppRoutes.PLANTS_FEED_SCREEN}

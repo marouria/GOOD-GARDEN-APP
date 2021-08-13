@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text } from "react-native";
 import { Avatar } from "react-native-paper";
 import { PlantProps } from "../../api/types";
+import { theme } from "../theme/theme";
 
 interface PlantAttributesCaptionProps {
   plant: PlantProps;
@@ -14,7 +15,7 @@ const PlantAttributesCaption = ({ plant }: PlantAttributesCaptionProps) => {
         <View>
           <Avatar.Icon
             icon="white-balance-sunny"
-            color="orange"
+            color={theme.colors.secondary800}
             size={40}
             style={{ backgroundColor: "none" }}
           />
@@ -26,13 +27,13 @@ const PlantAttributesCaption = ({ plant }: PlantAttributesCaptionProps) => {
         <View style={{ flexDirection: "row" }}>
           <Avatar.Icon
             icon="white-balance-sunny"
-            color="orange"
+            color={theme.colors.secondary800}
             size={40}
             style={{ backgroundColor: "none" }}
           />
           <Avatar.Icon
             icon="white-balance-sunny"
-            color="orange"
+            color={theme.colors.secondary800}
             size={40}
             style={{ backgroundColor: "none" }}
           />
@@ -47,7 +48,25 @@ const PlantAttributesCaption = ({ plant }: PlantAttributesCaptionProps) => {
         <View>
           <Avatar.Icon
             icon="water"
-            color="blue"
+            color={theme.colors.primary300}
+            size={40}
+            style={{ backgroundColor: "none" }}
+          />
+          <Avatar.Icon
+            icon="water-outline"
+            color={theme.colors.primary300}
+            size={40}
+            style={{ backgroundColor: "none" }}
+          />
+          <Avatar.Icon
+            icon="water-outline"
+            color={theme.colors.primary300}
+            size={40}
+            style={{ backgroundColor: "none" }}
+          />
+          <Avatar.Icon
+            icon="water-outline"
+            color={theme.colors.primary300}
             size={40}
             style={{ backgroundColor: "none" }}
           />
@@ -59,13 +78,25 @@ const PlantAttributesCaption = ({ plant }: PlantAttributesCaptionProps) => {
         <View style={{ flexDirection: "row" }}>
           <Avatar.Icon
             icon="water"
-            color="blue"
+            color={theme.colors.primary300}
             size={40}
             style={{ backgroundColor: "none" }}
           />
           <Avatar.Icon
             icon="water"
-            color="blue"
+            color={theme.colors.primary300}
+            size={40}
+            style={{ backgroundColor: "none" }}
+          />
+          <Avatar.Icon
+            icon="water-outline"
+            color={theme.colors.primary300}
+            size={40}
+            style={{ backgroundColor: "none" }}
+          />
+          <Avatar.Icon
+            icon="water-outline"
+            color={theme.colors.primary300}
             size={40}
             style={{ backgroundColor: "none" }}
           />
@@ -77,19 +108,25 @@ const PlantAttributesCaption = ({ plant }: PlantAttributesCaptionProps) => {
         <View style={{ flexDirection: "row" }}>
           <Avatar.Icon
             icon="water"
-            color="blue"
+            color={theme.colors.primary300}
             size={40}
             style={{ backgroundColor: "none" }}
           />
           <Avatar.Icon
             icon="water"
-            color="blue"
+            color={theme.colors.primary300}
             size={40}
             style={{ backgroundColor: "none" }}
           />
           <Avatar.Icon
             icon="water"
-            color="blue"
+            color={theme.colors.primary300}
+            size={40}
+            style={{ backgroundColor: "none" }}
+          />
+          <Avatar.Icon
+            icon="water-outline"
+            color={theme.colors.primary300}
             size={40}
             style={{ backgroundColor: "none" }}
           />
@@ -102,25 +139,25 @@ const PlantAttributesCaption = ({ plant }: PlantAttributesCaptionProps) => {
         <View style={{ flexDirection: "row" }}>
           <Avatar.Icon
             icon="water"
-            color="blue"
+            color={theme.colors.primary300}
             size={40}
             style={{ backgroundColor: "none" }}
           />
           <Avatar.Icon
             icon="water"
-            color="blue"
+            color={theme.colors.primary300}
             size={40}
             style={{ backgroundColor: "none" }}
           />
           <Avatar.Icon
             icon="water"
-            color="blue"
+            color={theme.colors.primary300}
             size={40}
             style={{ backgroundColor: "none" }}
           />
           <Avatar.Icon
             icon="water"
-            color="blue"
+            color={theme.colors.primary300}
             size={40}
             style={{ backgroundColor: "none" }}
           />
