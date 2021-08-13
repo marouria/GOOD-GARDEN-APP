@@ -1,7 +1,13 @@
 export const theme = {
   paragraph: {
-    fontFamily: "Montserrat",
+    fontFamily: "Helvetica",
     fontSize: 16,
+  },
+
+  title: {
+    fontFamily: "Helvetica",
+    fontSize: 24,
+    padding: 10,
   },
 
   colors: {
@@ -19,10 +25,5 @@ export const theme = {
     secondary700: "#FF927B",
     secondary600: "#FFA68F",
     third: "#DCE29F",
-  },
-  fontSize: {
-    paragraph: 8,
-    h1: 16,
-    h2: 24,
   },
 };

@@ -36,6 +36,7 @@ const PlantsFeedScreen = () => {
         style={{ marginTop: 20, marginBottom: 20 }}
       />
       <SafeAreaView>
+        <Title>Mes plantes</Title>
         {data.results
           .filter((plant) => plant.name.includes(searchQuery))
           .map((filteredPlant) => {

@@ -12,20 +12,39 @@ import CalendarScreen from "../screens/CalendarScreen";
 import { theme } from "../theme/theme";
 
 const Tab = createMaterialBottomTabNavigator();
-const PlantStack = createStackNavigator();
+const Stack = createStackNavigator();
 
 function PlantNavigator() {
   return (
-    <PlantStack.Navigator>
-      <PlantStack.Screen
+    <Stack.Navigator>
+      <Stack.Screen
         name={AppRoutes.PLANTS_FEED_SCREEN}
         component={PlantsFeedScreen}
       />
-      <PlantStack.Screen
+      <Stack.Screen
         name={AppRoutes.PLANT_DETAILS_SCREEN}
         component={PlantDetailsScreen}
       />
-    </PlantStack.Navigator>
+    </Stack.Navigator>
+  );
+}
+
+function CalendarNavigator() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name={AppRoutes.CALENDAR_SCREEN}
+        component={CalendarScreen}
+      />
+    </Stack.Navigator>
+  );
+}
+
+function ProfileNavigator() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name={AppRoutes.PROFILE} component={ProfileScreen} />
+    </Stack.Navigator>
   );
 }
 
@@ -45,14 +64,14 @@ const BottomTabNavigator = () => {
       />
       <Tab.Screen
         name={AppRoutes.CALENDAR_SCREEN}
-        component={CalendarScreen}
+        component={CalendarNavigator}
         options={{
           tabBarIcon: "calendar",
         }}
       />
       <Tab.Screen
         name={AppRoutes.PROFILE}
-        component={ProfileScreen}
+        component={ProfileNavigator}
         options={{
           tabBarIcon: "account",
         }}
