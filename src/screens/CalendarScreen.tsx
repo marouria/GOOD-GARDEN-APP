@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import AppLayout from "../components/AppLayout";
 import { Agenda } from "react-native-calendars";
+import { Avatar, Card, Paragraph } from "react-native-paper";
+import { theme } from "../theme/theme";
 
 interface Props {}
 
@@ -36,12 +38,35 @@ const CalendarScreen = (props: Props) => {
       setItems(newItems);
     }, 1000);
   };
+
+  const renderItem = (item) => {
+    return (
+      <TouchableOpacity>
+        <Card style={{ margin: 8 }}>
+          <Card.Content>
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <Paragraph>{item.name}</Paragraph>
+              <Avatar.Image size={40} source=""></Avatar.Image>
+            </View>
+          </Card.Content>
+        </Card>
+      </TouchableOpacity>
+    );
+  };
+
   return (
     <AppLayout>
       <Agenda
         items={items}
         loadItemsForMonth={loadItems}
         selected={"2017-05-16"}
+        renderItem={renderItem}
       />
     </AppLayout>
   );

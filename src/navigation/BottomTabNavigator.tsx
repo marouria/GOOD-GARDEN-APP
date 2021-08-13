@@ -1,7 +1,6 @@
 import React from "react";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import PlantDetailsScreen from "../screens/PlantDetailsScreen";
 import PlantsFeedScreen from "../screens/PlantsFeedScreen";
@@ -10,6 +9,7 @@ import ProfileScreen from "../screens/ProfileScreen";
 import { AppRoutes } from "./AppRoutes";
 import CalendarScreen from "../screens/CalendarScreen";
 import { theme } from "../theme/theme";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();

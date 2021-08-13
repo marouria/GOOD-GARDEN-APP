@@ -24,6 +24,11 @@ export const theme = {
     secondary800: "#FF7E67",
     secondary700: "#FF927B",
     secondary600: "#FFA68F",
+    secondary500: "#FFBAA3",
+    secondary400: "#FFCEB7",
+    secondary300: "#FFE2CB",
+    secondary200: "#FFF6DF",
+    secondary100: "#FFFFF3",
     third: "#DCE29F",
   },
 };
