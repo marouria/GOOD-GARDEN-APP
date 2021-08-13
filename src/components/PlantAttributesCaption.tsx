@@ -9,224 +9,50 @@ interface PlantAttributesCaptionProps {
 }
 
 const PlantAttributesCaption = ({ plant }: PlantAttributesCaptionProps) => {
-  const multiplySunshineIcons = (rate: number) => {
+  const SunshineIndicator = (rate: number) => {
     if (rate === 1) {
-      return (
-        <View>
-          <Avatar.Icon
-            icon="white-balance-sunny"
-            color={theme.colors.secondary800}
-            size={40}
-            style={{ backgroundColor: "none" }}
-          />
-        </View>
-      );
+      return <Text>direct</Text>;
     }
     if (rate === 2) {
-      return (
-        <View style={{ flexDirection: "row" }}>
-          <Avatar.Icon
-            icon="white-balance-sunny"
-            color={theme.colors.secondary800}
-            size={40}
-            style={{ backgroundColor: "none" }}
-          />
-          <Avatar.Icon
-            icon="white-balance-sunny"
-            color={theme.colors.secondary800}
-            size={40}
-            style={{ backgroundColor: "none" }}
-          />
-        </View>
-      );
+      return <Text>indirect</Text>;
     }
   };
 
-  const multiplyWateringIcons = (rate: number) => {
-    if (rate === 1) {
-      return (
-        <View>
-          <Avatar.Icon
-            icon="water"
-            color={theme.colors.primary300}
-            size={40}
-            style={{ backgroundColor: "none" }}
-          />
-          <Avatar.Icon
-            icon="water-outline"
-            color={theme.colors.primary300}
-            size={40}
-            style={{ backgroundColor: "none" }}
-          />
-          <Avatar.Icon
-            icon="water-outline"
-            color={theme.colors.primary300}
-            size={40}
-            style={{ backgroundColor: "none" }}
-          />
-          <Avatar.Icon
-            icon="water-outline"
-            color={theme.colors.primary300}
-            size={40}
-            style={{ backgroundColor: "none" }}
-          />
-        </View>
-      );
-    }
-    if (rate === 2) {
-      return (
-        <View style={{ flexDirection: "row" }}>
-          <Avatar.Icon
-            icon="water"
-            color={theme.colors.primary300}
-            size={40}
-            style={{ backgroundColor: "none" }}
-          />
-          <Avatar.Icon
-            icon="water"
-            color={theme.colors.primary300}
-            size={40}
-            style={{ backgroundColor: "none" }}
-          />
-          <Avatar.Icon
-            icon="water-outline"
-            color={theme.colors.primary300}
-            size={40}
-            style={{ backgroundColor: "none" }}
-          />
-          <Avatar.Icon
-            icon="water-outline"
-            color={theme.colors.primary300}
-            size={40}
-            style={{ backgroundColor: "none" }}
-          />
-        </View>
-      );
-    }
-    if (rate === 3) {
-      return (
-        <View style={{ flexDirection: "row" }}>
-          <Avatar.Icon
-            icon="water"
-            color={theme.colors.primary300}
-            size={40}
-            style={{ backgroundColor: "none" }}
-          />
-          <Avatar.Icon
-            icon="water"
-            color={theme.colors.primary300}
-            size={40}
-            style={{ backgroundColor: "none" }}
-          />
-          <Avatar.Icon
-            icon="water"
-            color={theme.colors.primary300}
-            size={40}
-            style={{ backgroundColor: "none" }}
-          />
-          <Avatar.Icon
-            icon="water-outline"
-            color={theme.colors.primary300}
-            size={40}
-            style={{ backgroundColor: "none" }}
-          />
-        </View>
-      );
-    }
-
-    if (rate === 4) {
-      return (
-        <View style={{ flexDirection: "row" }}>
-          <Avatar.Icon
-            icon="water"
-            color={theme.colors.primary300}
-            size={40}
-            style={{ backgroundColor: "none" }}
-          />
-          <Avatar.Icon
-            icon="water"
-            color={theme.colors.primary300}
-            size={40}
-            style={{ backgroundColor: "none" }}
-          />
-          <Avatar.Icon
-            icon="water"
-            color={theme.colors.primary300}
-            size={40}
-            style={{ backgroundColor: "none" }}
-          />
-          <Avatar.Icon
-            icon="water"
-            color={theme.colors.primary300}
-            size={40}
-            style={{ backgroundColor: "none" }}
-          />
-        </View>
-      );
-    }
-  };
-
-  const multiplyLevelIcons = (level: string) => {
-    if (level === "begin") {
-      return (
-        <View>
-          <Avatar.Icon
-            icon="seed-outline"
-            color="green"
-            size={40}
-            style={{ backgroundColor: "none" }}
-          />
-        </View>
-      );
-    }
-    if (level === "medium") {
-      return (
-        <View style={{ flexDirection: "row" }}>
-          <Avatar.Icon
-            icon="seed-outline"
-            color="green"
-            size={40}
-            style={{ backgroundColor: "none" }}
-          />
-          <Avatar.Icon
-            icon="seed-outline"
-            color="green"
-            size={40}
-            style={{ backgroundColor: "none" }}
-          />
-        </View>
-      );
-    }
-    if (level === "expert") {
-      return (
-        <View style={{ flexDirection: "row" }}>
-          <Avatar.Icon
-            icon="seed-outline"
-            color="green"
-            size={40}
-            style={{ backgroundColor: "none" }}
-          />
-          <Avatar.Icon
-            icon="seed-outline"
-            color="green"
-            size={40}
-            style={{ backgroundColor: "none" }}
-          />
-          <Avatar.Icon
-            icon="seed-outline"
-            color="green"
-            size={40}
-            style={{ backgroundColor: "none" }}
-          />
-        </View>
-      );
-    }
-  };
   return (
-    <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-      {multiplySunshineIcons(plant.sunshine_rate)}
-      {multiplyWateringIcons(plant.watering)}
-      {multiplyLevelIcons(plant.user_level)}
+    <View
+      style={{
+        flexDirection: "row",
+        justifyContent: "space-evenly",
+        margin: 20,
+      }}
+    >
+      <View style={{ alignItems: "center" }}>
+        <Avatar.Icon
+          icon="white-balance-sunny"
+          color={theme.colors.secondary800}
+          size={50}
+          style={{ backgroundColor: "none" }}
+        />
+        {SunshineIndicator(plant.sunshine_rate)}
+      </View>
+      <View style={{ alignItems: "center" }}>
+        <Avatar.Icon
+          icon="water"
+          color={theme.colors.primary300}
+          size={50}
+          style={{ backgroundColor: "none" }}
+        />
+        <Text>{plant.watering}x/month</Text>
+      </View>
+      <View style={{ alignItems: "center" }}>
+        <Avatar.Icon
+          icon="seed-outline"
+          color="green"
+          size={50}
+          style={{ backgroundColor: "none" }}
+        />
+        <Text>{plant.user_level}</Text>
+      </View>
     </View>
   );
 };
