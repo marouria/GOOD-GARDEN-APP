@@ -3,6 +3,7 @@ import { View, Text, Image, StyleSheet, Button } from "react-native";
 import AppLayout from "../components/AppLayout";
 import { Avatar, DataTable, Headline, Title } from "react-native-paper";
 import PlantAttributesCaption from "../components/PlantAttributesCaption";
+import { theme } from "../theme/theme";
 
 interface Props {
   route: any;
@@ -24,7 +25,7 @@ const PlantDetailsScreen = (props: Props) => {
         <PlantAttributesCaption
           plant={props.route.params.plantId}
         ></PlantAttributesCaption>
-        <Text>{description}</Text>
+        <Text style={theme.paragraph}>{description}</Text>
       </View>
     </AppLayout>
   );

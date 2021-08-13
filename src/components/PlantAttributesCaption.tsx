@@ -18,6 +18,18 @@ const PlantAttributesCaption = ({ plant }: PlantAttributesCaptionProps) => {
     }
   };
 
+  const UserLevelIndicator = (level: string) => {
+    if (level === "begin") {
+      return <Text>Beginner</Text>;
+    }
+    if (level === "medium") {
+      return <Text>Intermediate</Text>;
+    }
+    if (level === "expert") {
+      return <Text>Expert</Text>;
+    }
+  };
+
   return (
     <View
       style={{
@@ -47,11 +59,11 @@ const PlantAttributesCaption = ({ plant }: PlantAttributesCaptionProps) => {
       <View style={{ alignItems: "center" }}>
         <Avatar.Icon
           icon="seed-outline"
-          color="green"
+          color={theme.colors.primary800}
           size={50}
           style={{ backgroundColor: "none" }}
         />
-        <Text>{plant.user_level}</Text>
+        {UserLevelIndicator(plant.user_level)}
       </View>
     </View>
   );

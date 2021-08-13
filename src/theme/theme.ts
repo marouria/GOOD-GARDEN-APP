@@ -1,6 +1,7 @@
 export const theme = {
-  font: {
-    paragraph: "montserrat",
+  paragraph: {
+    fontFamily: "Montserrat",
+    fontSize: 16,
   },
 
   colors: {
@@ -16,7 +17,8 @@ export const theme = {
     secondary900: "#EB6A53",
     secondary800: "#FF7E67",
     secondary700: "#FF927B",
-    seondary600: "#FFA68F",
+    secondary600: "#FFA68F",
+    third: "#DCE29F",
   },
   fontSize: {
     paragraph: 8,

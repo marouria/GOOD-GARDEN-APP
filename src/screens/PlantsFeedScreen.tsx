@@ -33,6 +33,7 @@ const PlantsFeedScreen = () => {
         placeholder="Search a plant"
         onChangeText={onChangeSearch}
         value={searchQuery}
+        style={{ marginTop: 20, marginBottom: 20 }}
       />
       <SafeAreaView>
         {data.results
@@ -52,6 +53,3 @@ const styles = StyleSheet.create({
 });
 
 export default PlantsFeedScreen;
-function setFilteredDataSource(filteredData: any) {
-  throw new Error("Function not implemented.");
-}
