@@ -4,9 +4,14 @@ import AppLayout from "../components/AppLayout";
 import PlantCard from "../components/PlantCard";
 import { usePlants } from "../hooks/usePlants";
 import Spinner from "react-native-loading-spinner-overlay";
+import { Searchbar, Title } from "react-native-paper";
 
 const PlantsFeedScreen = () => {
   const { isLoading, isError, data } = usePlants();
+
+  const [searchQuery, setSearchQuery] = React.useState("");
+
+  const onChangeSearch = (query) => setSearchQuery(query);
 
   if (isLoading) {
     return (
@@ -24,10 +29,19 @@ const PlantsFeedScreen = () => {
 
   return (
     <AppLayout>
+      <Searchbar
+        placeholder="Search a plant"
+        onChangeText={onChangeSearch}
+        value={searchQuery}
+        style={{ marginTop: 20, marginBottom: 20 }}
+      />
       <SafeAreaView>
-        {data.results.map((plant) => {
-          return <PlantCard plant={plant}></PlantCard>;
-        })}
+        <Title>Mes plantes</Title>
+        {data.results
+          .filter((plant) => plant.name.includes(searchQuery))
+          .map((filteredPlant) => {
+            return <PlantCard plant={filteredPlant}></PlantCard>;
+          })}
       </SafeAreaView>
     </AppLayout>
   );

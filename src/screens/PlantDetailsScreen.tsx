@@ -3,6 +3,7 @@ import { View, Text, Image, StyleSheet, Button } from "react-native";
 import AppLayout from "../components/AppLayout";
 import { Avatar, DataTable, Headline, Title } from "react-native-paper";
 import PlantAttributesCaption from "../components/PlantAttributesCaption";
+import { theme } from "../theme/theme";
 
 interface Props {
   route: any;
@@ -13,10 +14,8 @@ const PlantDetailsScreen = (props: Props) => {
 
   return (
     <AppLayout>
-      <View>
-        <Headline style={{ padding: 5, marginTop: 30, fontSize: 34 }}>
-          {name}
-        </Headline>
+      <View style={{ marginTop: 20 }}>
+        <Headline style={theme.title}>{name}</Headline>
         <Image
           source={{ uri: img_url }}
           style={{ width: "100%", height: 250 }}
@@ -24,7 +23,7 @@ const PlantDetailsScreen = (props: Props) => {
         <PlantAttributesCaption
           plant={props.route.params.plantId}
         ></PlantAttributesCaption>
-        <Text>{description}</Text>
+        <Text style={theme.paragraph}>{description}</Text>
       </View>
     </AppLayout>
   );
