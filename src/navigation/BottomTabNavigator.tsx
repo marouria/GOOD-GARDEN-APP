@@ -11,7 +11,7 @@ import CalendarScreen from "../screens/CalendarScreen";
 import { theme } from "../theme/theme";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-const Tab = createMaterialBottomTabNavigator();
+export const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
 
 function PlantNavigator() {
