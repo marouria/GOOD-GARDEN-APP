@@ -6,7 +6,7 @@ import { usePlants } from "../hooks/usePlants";
 import Spinner from "react-native-loading-spinner-overlay";
 import { Searchbar, Title } from "react-native-paper";
 
-const PlantsFeedScreen = () => {
+const PlantsFeedScreen = (props) => {
   const { isLoading, isError, data } = usePlants();
 
   const [searchQuery, setSearchQuery] = React.useState("");
@@ -33,7 +33,7 @@ const PlantsFeedScreen = () => {
         placeholder="Search a plant"
         onChangeText={onChangeSearch}
         value={searchQuery}
-        style={{ marginTop: 20, marginBottom: 20 }}
+        style={{ marginBottom: 20 }}
       />
       <SafeAreaView>
         <Title>Mes plantes</Title>

@@ -16,7 +16,11 @@ const Stack = createStackNavigator();
 
 function PlantNavigator() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       <Stack.Screen
         name={AppRoutes.PLANTS_FEED_SCREEN}
         component={PlantsFeedScreen}
@@ -31,7 +35,11 @@ function PlantNavigator() {
 
 function CalendarNavigator() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       <Stack.Screen
         name={AppRoutes.CALENDAR_SCREEN}
         component={CalendarScreen}
@@ -42,7 +50,11 @@ function CalendarNavigator() {
 
 function ProfileNavigator() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       <Stack.Screen name={AppRoutes.PROFILE} component={ProfileScreen} />
     </Stack.Navigator>
   );

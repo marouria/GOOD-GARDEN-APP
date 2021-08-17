@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
+import { FAB } from "react-native-paper";
 import AppLayout from "../components/AppLayout";
 
 interface Props {}

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import AppLayout from "../components/AppLayout";
 import { Agenda } from "react-native-calendars";
-import { Avatar, Card, Paragraph } from "react-native-paper";
+import { Avatar, Card, FAB, Paragraph } from "react-native-paper";
 import { theme } from "../theme/theme";
 
 interface Props {}
@@ -17,7 +17,7 @@ const CalendarScreen = (props: Props) => {
 
   const loadItems = (day) => {
     setTimeout(() => {
-      for (let i = -15; i < 85; i++) {
+      for (let i = -5; i < 5; i++) {
         const time = day.timestamp + i * 24 * 60 * 60 * 1000;
         const strTime = timeToString(time);
         if (!items[strTime]) {
@@ -36,7 +36,7 @@ const CalendarScreen = (props: Props) => {
         newItems[key] = items[key];
       });
       setItems(newItems);
-    }, 1000);
+    }, 10);
   };
 
   const renderItem = (item) => {
@@ -65,8 +65,15 @@ const CalendarScreen = (props: Props) => {
       <Agenda
         items={items}
         loadItemsForMonth={loadItems}
-        selected={"2017-05-16"}
+        selected={"2021-08-16"}
         renderItem={renderItem}
+        minDate={"2021-08-10"}
+        maxDate={"2021-12-30"}
+        theme={{
+          agendaDayTextColor: theme.colors.primary900,
+          agendaDayNumColor: theme.colors.primary900,
+          agendaTodayColor: theme.colors.secondary900,
+        }}
       />
     </AppLayout>
   );
