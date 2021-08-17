@@ -16,14 +16,11 @@ const Stack = createStackNavigator();
 
 function PlantNavigator() {
   return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
+    <Stack.Navigator>
       <Stack.Screen
         name={AppRoutes.PLANTS_FEED_SCREEN}
         component={PlantsFeedScreen}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name={AppRoutes.PLANT_DETAILS_SCREEN}

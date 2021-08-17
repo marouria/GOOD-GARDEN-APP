@@ -14,7 +14,7 @@ const PlantDetailsScreen = (props: Props) => {
 
   return (
     <AppLayout>
-      <View style={{ marginTop: 20 }}>
+      <View>
         <Headline style={theme.title}>{name}</Headline>
         <Image
           source={{ uri: img_url }}

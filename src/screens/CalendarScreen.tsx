@@ -52,7 +52,13 @@ const CalendarScreen = (props: Props) => {
               }}
             >
               <Paragraph>{item.name}</Paragraph>
-              <Avatar.Image size={40} source=""></Avatar.Image>
+              <Avatar.Image
+                size={40}
+                source={{
+                  uri:
+                    "https://www.ecosia.org/images?q=plante#id=8DBE4130ACA3A224C46D8CE5811649A941BC7302",
+                }}
+              ></Avatar.Image>
             </View>
           </Card.Content>
         </Card>
