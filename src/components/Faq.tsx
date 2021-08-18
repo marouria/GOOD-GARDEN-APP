@@ -22,7 +22,8 @@ const allQuestions = [
   },
   {
     title: "Quels sont les niveaux de jardinnage ?",
-    answer: "",
+    answer:
+      "1. Débutant : pour ceux qui commande des plantes pour la première fois 2. Intermédiaire: pour ceux qui 3. Expert: pour ceux qui ",
   },
 ];
 
