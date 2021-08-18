@@ -27,6 +27,16 @@ const ProfileList = (plant: Props) => {
           />
         )}
       >
+        <List.Item
+          title="infos"
+          left={() => <List.Icon color="#000" icon="mail" />}
+          description={() => (
+            <View>
+              <Text>marie.leuliette@gmail.com</Text>
+              <Text>Lille</Text>
+            </View>
+          )}
+        />
         <List.Item title="Nombre de plantes d'hiver :" />
         <Text>?</Text>
         <List.Item title="Nombre de plantes d'été :" />
