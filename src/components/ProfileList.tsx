@@ -7,9 +7,7 @@ interface Props {
   plant: PlantProps;
 }
 
-const ProfileList = (plant: Props) => {
-  console.log(plant);
-  console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+const ProfileList = (props: Props) => {
   return (
     <List.AccordionGroup>
       <List.Accordion
@@ -41,23 +39,6 @@ const ProfileList = (plant: Props) => {
         <Text>?</Text>
         <List.Item title="Nombre de plantes d'été :" />
         <Text>?</Text>
-      </List.Accordion>
-      <List.Accordion title="FAQ" id="3">
-        <List.AccordionGroup>
-          <List.Accordion title="Comment ça marche ?" id="1">
-            <List.Item title="Answer" />
-          </List.Accordion>
-        </List.AccordionGroup>
-        <List.AccordionGroup>
-          <List.Accordion title="Question 2" id="1">
-            <List.Item title="Answer" />
-          </List.Accordion>
-        </List.AccordionGroup>
-        <List.AccordionGroup>
-          <List.Accordion title="Question 3" id="1">
-            <List.Item title="Answer" />
-          </List.Accordion>
-        </List.AccordionGroup>
       </List.Accordion>
       <View>
         <List.Accordion title="À propos de Good Garden" id="4">
