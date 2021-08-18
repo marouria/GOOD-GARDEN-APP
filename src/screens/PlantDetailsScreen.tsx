@@ -20,9 +20,7 @@ const PlantDetailsScreen = (props: Props) => {
           source={{ uri: img_url }}
           style={{ width: "100%", height: 250 }}
         />
-        <PlantAttributesCaption
-          plant={props.route.params.plantId}
-        ></PlantAttributesCaption>
+        <PlantAttributesCaption plant={props.route.params.plantId} />
         <Text style={theme.paragraph}>{description}</Text>
       </View>
     </AppLayout>

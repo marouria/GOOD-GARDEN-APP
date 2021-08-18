@@ -1,0 +1,64 @@
+import React from "react";
+import { View, Text } from "react-native";
+import { Avatar, List } from "react-native-paper";
+import { PlantProps } from "../../api/types";
+
+interface Props {
+  plant: PlantProps;
+}
+
+const ProfileList = (plant: Props) => {
+  console.log(plant);
+  console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+  return (
+    <List.AccordionGroup>
+      <List.Accordion
+        title="tomi"
+        description="Voir mon profil"
+        id="1"
+        left={(props) => (
+          <Avatar.Image
+            {...props}
+            size={50}
+            source={{
+              uri:
+                "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1700&q=80",
+            }}
+          />
+        )}
+      >
+        <List.Item title="Nombre de plantes d'hiver :" />
+        <Text>?</Text>
+        <List.Item title="Nombre de plantes d'été :" />
+        <Text>?</Text>
+      </List.Accordion>
+      <List.Accordion title="FAQ" id="3">
+        <List.AccordionGroup>
+          <List.Accordion title="Comment ça marche ?" id="1">
+            <List.Item title="Answer" />
+          </List.Accordion>
+        </List.AccordionGroup>
+        <List.AccordionGroup>
+          <List.Accordion title="Question 2" id="1">
+            <List.Item title="Answer" />
+          </List.Accordion>
+        </List.AccordionGroup>
+        <List.AccordionGroup>
+          <List.Accordion title="Question 3" id="1">
+            <List.Item title="Answer" />
+          </List.Accordion>
+        </List.AccordionGroup>
+      </List.Accordion>
+      <View>
+        <List.Accordion title="À propos de Good Garden" id="4">
+          <Text>
+            Good garden est une super application qui va vous faciliter la main
+            verte !
+          </Text>
+        </List.Accordion>
+      </View>
+    </List.AccordionGroup>
+  );
+};
+
+export default ProfileList;
