@@ -3,11 +3,7 @@ import { View, Text } from "react-native";
 import { Avatar, List } from "react-native-paper";
 import { PlantProps } from "../../api/types";
 
-interface Props {
-  plant: PlantProps;
-}
-
-const ProfileList = (props: Props) => {
+const ProfileList = () => {
   return (
     <List.AccordionGroup>
       <List.Accordion

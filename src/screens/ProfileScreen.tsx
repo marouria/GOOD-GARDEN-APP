@@ -5,6 +5,7 @@ import { PlantProps } from "../../api/types";
 import AppLayout from "../components/AppLayout";
 import Faq from "../components/Faq";
 import ProfileList from "../components/ProfileList";
+import LegalInfos from "../components/LegalInfos";
 
 interface Props {}
 
@@ -12,8 +13,9 @@ const ProfileScreen = (props: Props) => {
   return (
     <AppLayout>
       <View>
-        <ProfileList></ProfileList>
+        <ProfileList />
         <Faq />
+        <LegalInfos />
       </View>
     </AppLayout>
   );
