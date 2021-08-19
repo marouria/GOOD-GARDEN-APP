@@ -5,6 +5,7 @@ import { BottomTabBar } from "@react-navigation/bottom-tabs";
 import { FAB } from "react-native-paper";
 import { theme } from "../theme/theme";
 import CallToActionFab from "./CallToActionFab";
+import FabButton from "./FabButton";
 
 interface Props {
   children?: ReactNode;
@@ -14,6 +15,7 @@ const AppLayout = ({ children = false }: Props) => {
   return (
     <View style={styles.container}>
       <ScrollView style={{ marginTop: 40 }}>{children}</ScrollView>
+      <FabButton />
     </View>
   );
 };
