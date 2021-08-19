@@ -21,7 +21,7 @@ const allQuestions = [
       "Toutes les plantes sont soigneusement selectionnées par notre équipe auprès de producteurs locaux et s'assurent d'une production non intensive, respectueuse de l'environnement et durable.",
   },
   {
-    title: "Quels sont les niveaux de jardinnage ?",
+    title: "À quoi correspondent les niveaux de jardinnage ?",
     answer:
       "1. Débutant : pour ceux qui commande des plantes pour la première fois 2. Intermédiaire: pour ceux qui 3. Expert: pour ceux qui ",
   },

@@ -17,4 +17,4 @@ yarn ios|android
 
 ### Some more
 
-[web app](https://good-garden.herokuapp.com/)
+[web app](http://www.good-garden.club/)

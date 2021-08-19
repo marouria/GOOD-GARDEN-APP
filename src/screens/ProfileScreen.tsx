@@ -13,6 +13,7 @@ const ProfileScreen = (props: Props) => {
     <AppLayout>
       <View>
         <ProfileInfos />
+
         <Headline style={{ paddingVertical: 24 }}>FAQ</Headline>
         <Faq />
         <Headline style={{ paddingVertical: 24 }}>
