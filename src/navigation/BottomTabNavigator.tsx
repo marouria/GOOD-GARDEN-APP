@@ -9,7 +9,6 @@ import ProfileScreen from "../screens/ProfileScreen";
 import { AppRoutes } from "./AppRoutes";
 import CalendarScreen from "../screens/CalendarScreen";
 import { theme } from "../theme/theme";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import NewTaskScreen from "../screens/NewTaskScreen";
 
 export const Tab = createMaterialBottomTabNavigator();
@@ -27,25 +26,26 @@ function PlantNavigator() {
         name={AppRoutes.PLANT_DETAILS_SCREEN}
         component={PlantDetailsScreen}
       />
-      <Stack.Screen
-        name={AppRoutes.NEW_TASK_SCREEN}
-        component={NewTaskScreen}
-      />
     </Stack.Navigator>
   );
 }
 
 function CalendarNavigator() {
   return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
-      <Stack.Screen
-        name={AppRoutes.CALENDAR_SCREEN}
-        component={CalendarScreen}
-      />
+    <Stack.Navigator>
+      <Stack.Group>
+        <Stack.Screen
+          name={AppRoutes.CALENDAR_SCREEN}
+          component={CalendarScreen}
+          options={{ headerShown: false }}
+        />
+      </Stack.Group>
+      <Stack.Group screenOptions={{ presentation: "modal" }}>
+        <Stack.Screen
+          name={AppRoutes.NEW_TASK_SCREEN}
+          component={NewTaskScreen}
+        />
+      </Stack.Group>
     </Stack.Navigator>
   );
 }
