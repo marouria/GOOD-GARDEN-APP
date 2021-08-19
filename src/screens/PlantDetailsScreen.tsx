@@ -14,15 +14,13 @@ const PlantDetailsScreen = (props: Props) => {
 
   return (
     <AppLayout>
-      <View style={{ marginTop: 20 }}>
+      <View>
         <Headline style={theme.title}>{name}</Headline>
         <Image
           source={{ uri: img_url }}
           style={{ width: "100%", height: 250 }}
         />
-        <PlantAttributesCaption
-          plant={props.route.params.plantId}
-        ></PlantAttributesCaption>
+        <PlantAttributesCaption plant={props.route.params.plantId} />
         <Text style={theme.paragraph}>{description}</Text>
       </View>
     </AppLayout>

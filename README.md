@@ -1,4 +1,4 @@
-# nerd-fm
+# GOOD-GARDEN-APP
 
 > App to customize your garden and take care of your plants
 

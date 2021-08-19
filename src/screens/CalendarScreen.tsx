@@ -1,43 +1,20 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
-import AppLayout from "../components/AppLayout";
-import { Agenda } from "react-native-calendars";
-import { Avatar, Card, FAB, Paragraph } from "react-native-paper";
+import { Agenda, AgendaItemsMap } from "react-native-calendars";
+import { Avatar, Card, Colors, Paragraph } from "react-native-paper";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { theme } from "../theme/theme";
 
-interface Props {}
-
-const timeToString = (time) => {
-  const date = new Date(time);
-  return date.toISOString().split("T")[0];
-};
-
-const CalendarScreen = (props: Props) => {
-  const [items, setItems] = useState({});
-
-  const loadItems = (day) => {
-    setTimeout(() => {
-      for (let i = -5; i < 5; i++) {
-        const time = day.timestamp + i * 24 * 60 * 60 * 1000;
-        const strTime = timeToString(time);
-        if (!items[strTime]) {
-          items[strTime] = [];
-          const numItems = Math.floor(Math.random() * 3 + 1);
-          for (let j = 0; j < numItems; j++) {
-            items[strTime].push({
-              name: "Item for " + strTime + " #" + j,
-              height: Math.max(50, Math.floor(Math.random() * 150)),
-            });
-          }
-        }
-      }
-      const newItems = {};
-      Object.keys(items).forEach((key) => {
-        newItems[key] = items[key];
-      });
-      setItems(newItems);
-    }, 10);
-  };
+const CalendarScreen = () => {
+  const [items, setItems] = useState({
+    "2021-08-18": [{ name: "item 1 - any js object" }],
+    "2021-08-23": [{ name: "item 2 - any js object", height: 80 }],
+    "2021-08-24": [],
+    "2021-08-25": [
+      { name: "item 3 - any js object" },
+      { name: "any js object" },
+    ],
+  });
 
   const renderItem = (item) => {
     return (
@@ -52,7 +29,14 @@ const CalendarScreen = (props: Props) => {
               }}
             >
               <Paragraph>{item.name}</Paragraph>
-              <Avatar.Image size={40} source=""></Avatar.Image>
+              <Avatar.Image
+                size={36}
+                style={{ backgroundColor: Colors.grey300 }}
+                source={{
+                  uri:
+                    "https://www.ecosia.org/images?q=plante#id=8DBE4130ACA3A224C46D8CE5811649A941BC7302",
+                }}
+              />
             </View>
           </Card.Content>
         </Card>
@@ -61,21 +45,26 @@ const CalendarScreen = (props: Props) => {
   };
 
   return (
-    <AppLayout>
+    <SafeAreaView style={{ flex: 1 }}>
       <Agenda
-        items={items}
-        loadItemsForMonth={loadItems}
-        selected={"2021-08-16"}
+        renderEmptyDate={() => {
+          return <View />;
+        }}
         renderItem={renderItem}
-        minDate={"2021-08-10"}
-        maxDate={"2021-12-30"}
+        rowHasChanged={(r1, r2) => {
+          return r1.text !== r2.text;
+        }}
+        //  markingType,
+        //  markedDates
+        // Agenda theme
+        items={items}
         theme={{
           agendaDayTextColor: theme.colors.primary900,
           agendaDayNumColor: theme.colors.primary900,
           agendaTodayColor: theme.colors.secondary900,
         }}
       />
-    </AppLayout>
+    </SafeAreaView>
   );
 };
 

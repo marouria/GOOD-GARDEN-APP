@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { Text, SafeAreaView, StyleSheet } from "react-native";
 import AppLayout from "../components/AppLayout";
 import PlantCard from "../components/PlantCard";
@@ -9,7 +9,7 @@ import { Searchbar, Title } from "react-native-paper";
 const PlantsFeedScreen = (props) => {
   const { isLoading, isError, data } = usePlants();
 
-  const [searchQuery, setSearchQuery] = React.useState("");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const onChangeSearch = (query) => setSearchQuery(query);
 
