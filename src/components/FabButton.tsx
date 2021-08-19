@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, Text } from "react-native";
 import { FAB, Portal, Provider } from "react-native-paper";
+import { theme } from "../theme/theme";
 
 interface Props {}
 
@@ -16,17 +17,18 @@ const FabButton = () => {
         <FAB.Group
           open={open}
           visible
-          icon={open ? "calendar-today" : "plus"}
+          style={{ padding: 20 }}
+          fabStyle={{ backgroundColor: theme.colors.secondary800 }}
+          icon={open ? "folder-plus" : "plus"}
           actions={[
-            { icon: "plus", onPress: () => console.log("Pressed add") },
             {
-              icon: "star",
-              label: "Star",
+              icon: "flower-tulip",
+              label: "New plant",
               onPress: () => console.log("Pressed star"),
             },
             {
-              icon: "email",
-              label: "Email",
+              icon: "alarm-check",
+              label: "New task",
               onPress: () => console.log("Pressed email"),
             },
           ]}
