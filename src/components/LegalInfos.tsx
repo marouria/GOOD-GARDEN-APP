@@ -25,25 +25,16 @@ const allLegalInfos = [
   },
 ];
 
-const LegalInfos = ({ fuuu }) => {
-  const LegalInfosList = () => {
-    return (
-      <View>
-        {allLegalInfos.map((info) => {
-          return (
-            <List.Accordion title={info.title}>
-              <List.Item title={info.content} />
-            </List.Accordion>
-          );
-        })}
-      </View>
-    );
-  };
-
+const LegalInfos = () => {
   return (
     <View>
-      <Headline>Informations Légales</Headline>
-      <LegalInfosList />
+      {allLegalInfos.map((info) => {
+        return (
+          <List.Accordion title={info.title}>
+            <List.Item title={info.content} />
+          </List.Accordion>
+        );
+      })}
     </View>
   );
 };

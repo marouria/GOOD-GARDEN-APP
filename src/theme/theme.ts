@@ -29,6 +29,5 @@ export const theme = {
     secondary300: "#FFE2CB",
     secondary200: "#FFF6DF",
     secondary100: "#FFFFF3",
-    third: "#DCE29F",
   },
 };

@@ -40,7 +40,6 @@ const Faq = () => {
 
   return (
     <View>
-      <Headline>FAQ</Headline>
       {allQuestions.map((question, index) => {
         return <FaqItem question={question} />;
       })}

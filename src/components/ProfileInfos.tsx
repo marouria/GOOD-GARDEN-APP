@@ -1,13 +1,21 @@
 import React from "react";
 import { View, Text } from "react-native";
 import { Avatar, List } from "react-native-paper";
+import { MarkerUnits } from "react-native-svg";
+import { getParsedCommandLineOfConfigFile } from "typescript";
 import { PlantProps } from "../../api/types";
 
-const ProfileList = () => {
+const userInfos = {
+  username: "marouria",
+  email: "marie.leuliette@gmail.com",
+  city: "Lille",
+  avatar_img: "https://avatars.githubusercontent.com/u/81169078?v=4",
+};
+const ProfileInfos = () => {
   return (
     <List.AccordionGroup>
       <List.Accordion
-        title="tomi"
+        title={userInfos.username}
         description="Voir mon profil"
         id="1"
         left={(props) => (
@@ -15,26 +23,20 @@ const ProfileList = () => {
             {...props}
             size={50}
             source={{
-              uri:
-                "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1700&q=80",
+              uri: userInfos.avatar_img,
             }}
           />
         )}
       >
         <List.Item
-          title="infos"
-          left={() => <List.Icon color="#000" icon="mail" />}
-          description={() => (
-            <View>
-              <Text>marie.leuliette@gmail.com</Text>
-              <Text>Lille</Text>
-            </View>
-          )}
+          title={userInfos.email}
+          left={() => <List.Icon color="#000" icon="email-outline" />}
         />
-        <List.Item title="Nombre de plantes d'hiver :" />
-        <Text>?</Text>
+        <List.Item
+          title={userInfos.city}
+          left={() => <List.Icon color="#000" icon="map-marker" />}
+        />
         <List.Item title="Nombre de plantes d'été :" />
-        <Text>?</Text>
       </List.Accordion>
       <View>
         <List.Accordion title="À propos de Good Garden" id="4">
@@ -48,4 +50,4 @@ const ProfileList = () => {
   );
 };
 
-export default ProfileList;
+export default ProfileInfos;
