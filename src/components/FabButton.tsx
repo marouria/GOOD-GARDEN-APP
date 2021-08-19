@@ -1,6 +1,9 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import { View, Text } from "react-native";
 import { FAB, Portal, Provider } from "react-native-paper";
+import { AppRoutes } from "../navigation/AppRoutes";
+import NewTaskScreen from "../screens/NewTaskScreen";
 import { theme } from "../theme/theme";
 
 interface Props {}
@@ -11,6 +14,9 @@ const FabButton = () => {
   const onStateChange = ({ open }) => setState({ open });
 
   const { open } = state;
+
+  const navigation = useNavigation();
+
   return (
     <Provider>
       <Portal>
@@ -24,12 +30,12 @@ const FabButton = () => {
             {
               icon: "flower-tulip",
               label: "New plant",
-              onPress: () => console.log("Pressed star"),
+              onPress: () => console.log("Pressed email"),
             },
             {
               icon: "alarm-check",
               label: "New task",
-              onPress: () => console.log("Pressed email"),
+              onPress: () => navigation.navigate(AppRoutes.NEW_TASK_SCREEN),
             },
           ]}
           onStateChange={onStateChange}

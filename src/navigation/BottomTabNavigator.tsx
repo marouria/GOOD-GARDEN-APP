@@ -10,6 +10,7 @@ import { AppRoutes } from "./AppRoutes";
 import CalendarScreen from "../screens/CalendarScreen";
 import { theme } from "../theme/theme";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import NewTaskScreen from "../screens/NewTaskScreen";
 
 export const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -25,6 +26,10 @@ function PlantNavigator() {
       <Stack.Screen
         name={AppRoutes.PLANT_DETAILS_SCREEN}
         component={PlantDetailsScreen}
+      />
+      <Stack.Screen
+        name={AppRoutes.NEW_TASK_SCREEN}
+        component={NewTaskScreen}
       />
     </Stack.Navigator>
   );
