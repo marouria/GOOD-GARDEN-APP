@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
+import TaskForm from "../components/TaskForm";
 
 interface Props {}
 
@@ -9,8 +10,7 @@ const NewTaskScreen = (props: Props) => {
       <Text>Hellooooooo</Text>
       <Text>Hellooooooo</Text>
       <Text>Hellooooooo</Text>
-
-      <Text></Text>
+      <TaskForm />
     </View>
   );
 };

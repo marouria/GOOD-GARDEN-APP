@@ -21,6 +21,7 @@
     "react": "16.13.1",
     "react-content-loader": "^6.0.3",
     "react-dom": "16.13.1",
+    "react-hook-form": "^7.12.2",
     "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
     "react-native-calendars": "^1.1264.0",
     "react-native-gesture-handler": "~1.10.2",
