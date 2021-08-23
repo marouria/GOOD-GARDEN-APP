@@ -26,6 +26,12 @@ function PlantNavigator() {
         name={AppRoutes.PLANT_DETAILS_SCREEN}
         component={PlantDetailsScreen}
       />
+      <Stack.Group screenOptions={{ presentation: "modal" }}>
+        <Stack.Screen
+          name={AppRoutes.NEW_TASK_SCREEN}
+          component={NewTaskScreen}
+        />
+      </Stack.Group>
     </Stack.Navigator>
   );
 }
@@ -58,6 +64,12 @@ function ProfileNavigator() {
       }}
     >
       <Stack.Screen name={AppRoutes.PROFILE} component={ProfileScreen} />
+      <Stack.Group screenOptions={{ presentation: "modal" }}>
+        <Stack.Screen
+          name={AppRoutes.NEW_TASK_SCREEN}
+          component={NewTaskScreen}
+        />
+      </Stack.Group>
     </Stack.Navigator>
   );
 }
