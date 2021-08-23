@@ -3,7 +3,6 @@ import { Controller, useForm } from "react-hook-form";
 import { View } from "react-native";
 import { Button, Headline, TextInput } from "react-native-paper";
 import DateTimePicker from "@react-native-community/datetimepicker";
-import { DatePickerIOS } from "react-native";
 
 type FormValues = {
   title: string;
@@ -54,7 +53,8 @@ const TaskForm = () => {
             value={value}
             is24Hour={true}
             display="spinner"
-            onChange={onChange}
+            placeholderText="Select a date for this new task"
+            onChange={(date) => onChange(date)}
           />
         )}
         name="date"
