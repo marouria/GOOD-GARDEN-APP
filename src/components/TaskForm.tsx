@@ -1,26 +1,47 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
+import { View } from "react-native";
 import { Button, Headline, TextInput } from "react-native-paper";
+import AppLayout from "./AppLayout";
 
+type FormValues = {
+  title: string;
+  date: Date;
+  time: number;
+  plant: string;
+};
 const TaskForm = () => {
   const {
     register,
+    control,
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm();
-
-  const [text, setText] = useState();
+  } = useForm<FormValues>();
 
   const onSubmit = (data) => console.log(data);
 
-  console.log(watch("example")); // watch input value by passing the name of it
   return (
-    <TextInput
-      label=""
-      value="test"
-      {...register("exampleRequired", { required: true })}
-    />
+    <View>
+      <Controller
+        control={control}
+        render={({ field: { onChange, onBlur, value } }) => (
+          <TextInput
+            label="Add a title"
+            mode="outlined"
+            onBlur={onBlur}
+            onChangeText={onChange}
+            value={value}
+            style={{ padding: 10 }}
+          />
+        )}
+        name="title"
+        rules={{ required: true }}
+        defaultValue="Water my plant"
+      />
+      {errors.title && <Headline>Title is required.</Headline>}
+      <Button onPress={handleSubmit(onSubmit)}>Submit</Button>
+    </View>
   );
 };
 
