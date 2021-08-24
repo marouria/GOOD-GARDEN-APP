@@ -4,4 +4,5 @@ export enum AppRoutes {
   PLANT_DETAILS_SCREEN = "Plant",
   PROFILE = "Profile",
   CALENDAR_SCREEN = "Calendar",
+  NEW_TASK_SCREEN = "Task",
 }

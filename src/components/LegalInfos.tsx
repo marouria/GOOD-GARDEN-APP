@@ -9,19 +9,19 @@ interface LegalInfosProps {
 
 const allLegalInfos = [
   {
-    title: "Conditions générales",
+    title: "Conditions générales d'utilisation",
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "Nouvelle version applicable à partir du 7 juin 2021. La plateforme GOODGARDEN (ci-après le “Site”) est gérée et hébergée par la société GOODGARDEN, UAB (ci-après “GOODGARDEN”), située à Svitrigailos st. 13, 03228 Vilnius en Lituanie, inscrite au Registre des Sociétés de la République de Lituanie sous le numéro 302767152. Avant de naviguer ou de s’inscrire sur le Site, chaque Utilisateur doit lire les présentes Conditions Générales d’Utilisation (ci-après les “Conditions Générales”), la Politique de Confidentialité (telle définie dans l’Article Définitions ci-dessous), ainsi que les autres dispositions obligatoires du Site, rappelées ou non dans les présentes Conditions Générales (y compris les Règles du Catalogue, les Règles du Forum et la Liste des Tarifs), les accepter et s’engager à les respecter.",
   },
   {
     title: "Politiques de confidentialité",
     content:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+      "Nous collectons et utilisons vos données à caractère personnel pour vous permettre d’utiliser notre Plateforme, fournir nos services et conclure un contrat (CG) avec vous, et tout particulièrement pour effectuer des transactions commerciales via la Plateforme, utiliser le système de paiement électronique ou laisser des avis et communiquer avec d’autres membres. Afin d'utiliser ces services, vous devez avoir un compte Vinted. À cette fin, vous devez vous inscrire en tant que membre sur le site Web ou l’Application. Nous avons besoin de la plupart de vos données à caractère personnel pour conclure un contrat (CG) avec vous. Dans le cas où vous ne nous fournissez pas ces données à caractère personnel, nous ne serons pas en mesure de conclure et d’exécuter un contrat (CG) avec vous. Nous avons besoin d’une partie de vos données afin de pouvoir satisfaire à nos obligations légales lorsque vous êtes membre de notre Plateforme. Dans le cas où vous ne nous fournissez pas ces données à caractère personnel, nous ne serons pas en mesure de nous conformer aux exigences légales et de fournir nos services. Ces données sont également utilisées pour améliorer la Plateforme afin que nous puissions offrir une meilleure expérience à nos membres (voir 2.2.12). Good Garden collecte vos données à caractère personnel pour vous permettre d’utiliser notre Plateforme, pour fournir ses services et pour conclure un contrat (CG) avec vous, et ces données sont conservées aussi longtemps que nous conservons votre compte Vinted – pendant 3 mois à partir de la date de suppression de votre compte Vinted ou pendant 5 ans et 3 mois à partir du moment où votre compte devient inactif.",
   },
   {
     title: "Copyrights",
     content:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+      "Copyright is a form of legal protection that gives you ownership rights to your original works. The moment you create a work of creative expression that falls within the scope of US copyright laws, it is automatically protected by law. Copyright protects your original works, published or unpublished, in the event that they’re stolen or plagiarized.",
   },
 ];
 
@@ -31,7 +31,7 @@ const LegalInfos = () => {
       {allLegalInfos.map((info) => {
         return (
           <List.Accordion title={info.title}>
-            <List.Item title={info.content} />
+            <List.Item title="" description={info.content} />
           </List.Accordion>
         );
       })}
