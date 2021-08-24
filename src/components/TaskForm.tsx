@@ -49,9 +49,8 @@ const TaskForm = () => {
           <DateTimePicker
             testID="dateTimePicker"
             value={value}
-            is24Hour={true}
+            mode="date"
             display="spinner"
-            placeholderText="Select a date for this new task"
             onChange={onChange}
           />
         )}
