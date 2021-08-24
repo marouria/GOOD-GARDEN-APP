@@ -24,8 +24,6 @@ const TaskForm = () => {
     console.log(data);
   };
 
-  const [dateValue, setDate] = useState(new Date());
-
   return (
     <View>
       <Controller
@@ -54,7 +52,7 @@ const TaskForm = () => {
             is24Hour={true}
             display="spinner"
             placeholderText="Select a date for this new task"
-            onChange={(date) => onChange(date)}
+            onChange={onChange}
           />
         )}
         name="date"
