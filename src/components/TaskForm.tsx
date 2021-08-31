@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
-import { View } from "react-native";
+import { Platform, View } from "react-native";
 import { Button, Headline, TextInput } from "react-native-paper";
 import DateTimePicker from "@react-native-community/datetimepicker";
 
@@ -15,7 +15,6 @@ const TaskForm = () => {
   const {
     control,
     handleSubmit,
-    setValue,
     formState: { errors },
   } = useForm<FormValues>();
 
@@ -24,7 +23,13 @@ const TaskForm = () => {
     console.log(data);
   };
 
-  const [dateValue, setDate] = useState(new Date());
+  const [date, setDate] = useState(new Date(1598051730000));
+  console.log(date);
+
+  const onChange = (event, selectedDate) => {
+    const currentDate = selectedDate || date;
+    setDate(currentDate);
+  };
 
   return (
     <View>
@@ -44,24 +49,14 @@ const TaskForm = () => {
         defaultValue="Water my plant"
       />
       {errors.title && <Headline>Title is required.</Headline>}
-
-      <Controller
-        control={control}
-        render={({ field: { onChange, value } }) => (
-          <DateTimePicker
-            testID="dateTimePicker"
-            value={value}
-            is24Hour={true}
-            display="spinner"
-            placeholderText="Select a date for this new task"
-            onChange={(date) => onChange(date)}
-          />
-        )}
-        name="date"
-        rules={{ required: true }}
-        defaultValue={new Date()}
+      <DateTimePicker
+        testID="dateTimePicker"
+        value={date}
+        mode="date"
+        is24Hour={true}
+        display="spinner"
+        onChange={onChange}
       />
-      {errors.title && <Headline>Title is required.</Headline>}
 
       <Button onPress={handleSubmit(onSubmit)}>Submit</Button>
     </View>
