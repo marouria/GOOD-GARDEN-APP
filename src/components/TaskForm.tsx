@@ -23,12 +23,13 @@ const TaskForm = () => {
     console.log(data);
   };
 
-  const [date, setDate] = useState(new Date(1598051730000));
+  const [date, setDate] = useState(new Date());
+  console.log(date);
 
-  // const onChange = (event, selectedDate) => {
-  //   const currentDate = selectedDate || date;
-  //   setDate(currentDate);
-  // };
+  const onChangeDate = (event, selectedDate) => {
+    const currentDate = selectedDate || date;
+    setDate(currentDate);
+  };
 
   return (
     <View>
@@ -58,8 +59,7 @@ const TaskForm = () => {
             mode="date"
             is24Hour={true}
             display="spinner"
-            onChange={onChange}
-            {...console.log(value)}
+            onChange={onChangeDate}
           />
         )}
         name="date"
