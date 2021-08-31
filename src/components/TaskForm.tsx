@@ -24,12 +24,11 @@ const TaskForm = () => {
   };
 
   const [date, setDate] = useState(new Date(1598051730000));
-  console.log(date);
 
-  const onChange = (event, selectedDate) => {
-    const currentDate = selectedDate || date;
-    setDate(currentDate);
-  };
+  // const onChange = (event, selectedDate) => {
+  //   const currentDate = selectedDate || date;
+  //   setDate(currentDate);
+  // };
 
   return (
     <View>
@@ -49,9 +48,10 @@ const TaskForm = () => {
         defaultValue="Water my plant"
       />
       {errors.title && <Headline>Title is required.</Headline>}
+
       <Controller
         control={control}
-        render={({ field: { value } }) => (
+        render={({ field: { onChange, value } }) => (
           <DateTimePicker
             testID="dateTimePicker"
             value={value}
@@ -59,10 +59,10 @@ const TaskForm = () => {
             is24Hour={true}
             display="spinner"
             onChange={onChange}
+            {...console.log(value)}
           />
         )}
         name="date"
-        rules={{ required: true }}
         defaultValue={new Date(1598051730000)}
       />
       <Button onPress={handleSubmit(onSubmit)}>Submit</Button>
