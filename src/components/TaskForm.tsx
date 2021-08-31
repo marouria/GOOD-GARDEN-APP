@@ -49,15 +49,22 @@ const TaskForm = () => {
         defaultValue="Water my plant"
       />
       {errors.title && <Headline>Title is required.</Headline>}
-      <DateTimePicker
-        testID="dateTimePicker"
-        value={date}
-        mode="date"
-        is24Hour={true}
-        display="spinner"
-        onChange={onChange}
+      <Controller
+        control={control}
+        render={({ field: { value } }) => (
+          <DateTimePicker
+            testID="dateTimePicker"
+            value={value}
+            mode="date"
+            is24Hour={true}
+            display="spinner"
+            onChange={onChange}
+          />
+        )}
+        name="date"
+        rules={{ required: true }}
+        defaultValue={new Date(1598051730000)}
       />
-
       <Button onPress={handleSubmit(onSubmit)}>Submit</Button>
     </View>
   );
