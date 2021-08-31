@@ -1,15 +1,15 @@
-import React from "react";
-import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
-import { createStackNavigator } from "@react-navigation/stack";
+import React from 'react';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 
-import PlantDetailsScreen from "../screens/PlantDetailsScreen";
-import PlantsFeedScreen from "../screens/PlantsFeedScreen";
-import ProfileScreen from "../screens/ProfileScreen";
+import PlantDetailsScreen from '../screens/PlantDetailsScreen';
+import PlantsFeedScreen from '../screens/PlantsFeedScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 
-import { AppRoutes } from "./AppRoutes";
-import CalendarScreen from "../screens/CalendarScreen";
-import { theme } from "../theme/theme";
-import NewTaskScreen from "../screens/NewTaskScreen";
+import { AppRoutes } from './AppRoutes';
+import CalendarScreen from '../screens/CalendarScreen';
+import { theme } from '../theme/theme';
+import NewTaskScreen from '../screens/NewTaskScreen';
 
 export const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -26,12 +26,6 @@ function PlantNavigator() {
         name={AppRoutes.PLANT_DETAILS_SCREEN}
         component={PlantDetailsScreen}
       />
-      <Stack.Group screenOptions={{ presentation: "modal" }}>
-        <Stack.Screen
-          name={AppRoutes.NEW_TASK_SCREEN}
-          component={NewTaskScreen}
-        />
-      </Stack.Group>
     </Stack.Navigator>
   );
 }
@@ -39,14 +33,15 @@ function PlantNavigator() {
 function CalendarNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Group>
-        <Stack.Screen
-          name={AppRoutes.CALENDAR_SCREEN}
-          component={CalendarScreen}
-          options={{ headerShown: false }}
-        />
-      </Stack.Group>
-      <Stack.Group screenOptions={{ presentation: "modal" }}>
+      <Stack.Screen
+        name={AppRoutes.CALENDAR_SCREEN}
+        component={CalendarScreen}
+        options={{ headerShown: false }}
+      />
+
+      <Stack.Group
+        screenOptions={{ presentation: 'modal', headerShown: false }}
+      >
         <Stack.Screen
           name={AppRoutes.NEW_TASK_SCREEN}
           component={NewTaskScreen}
@@ -64,12 +59,6 @@ function ProfileNavigator() {
       }}
     >
       <Stack.Screen name={AppRoutes.PROFILE} component={ProfileScreen} />
-      <Stack.Group screenOptions={{ presentation: "modal" }}>
-        <Stack.Screen
-          name={AppRoutes.NEW_TASK_SCREEN}
-          component={NewTaskScreen}
-        />
-      </Stack.Group>
     </Stack.Navigator>
   );
 }
@@ -85,21 +74,21 @@ const BottomTabNavigator = () => {
         name={AppRoutes.PLANTS_FEED_SCREEN}
         component={PlantNavigator}
         options={{
-          tabBarIcon: "home",
+          tabBarIcon: 'home',
         }}
       />
       <Tab.Screen
         name={AppRoutes.CALENDAR_SCREEN}
         component={CalendarNavigator}
         options={{
-          tabBarIcon: "calendar",
+          tabBarIcon: 'calendar',
         }}
       />
       <Tab.Screen
         name={AppRoutes.PROFILE}
         component={ProfileNavigator}
         options={{
-          tabBarIcon: "account",
+          tabBarIcon: 'account',
         }}
       />
     </Tab.Navigator>

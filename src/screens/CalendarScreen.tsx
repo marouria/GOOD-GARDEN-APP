@@ -1,18 +1,19 @@
-import React, { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
-import { Agenda, AgendaItemsMap } from "react-native-calendars";
-import { Avatar, Card, Colors, Paragraph } from "react-native-paper";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { theme } from "../theme/theme";
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { Agenda, AgendaItemsMap } from 'react-native-calendars';
+import { Avatar, Card, Colors, Paragraph } from 'react-native-paper';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import FabButton from '../components/FabButton';
+import { theme } from '../theme/theme';
 
 const CalendarScreen = () => {
   const [items, setItems] = useState({
-    "2021-08-18": [{ name: "item 1 - any js object" }],
-    "2021-08-23": [{ name: "item 2 - any js object", height: 80 }],
-    "2021-08-24": [],
-    "2021-08-25": [
-      { name: "item 3 - any js object" },
-      { name: "any js object" },
+    '2021-08-18': [{ name: 'item 1 - any js object' }],
+    '2021-08-23': [{ name: 'item 2 - any js object', height: 80 }],
+    '2021-08-24': [],
+    '2021-08-25': [
+      { name: 'item 3 - any js object' },
+      { name: 'any js object' },
     ],
   });
 
@@ -23,9 +24,9 @@ const CalendarScreen = () => {
           <Card.Content>
             <View
               style={{
-                flexDirection: "row",
-                justifyContent: "space-between",
-                alignItems: "center",
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
               }}
             >
               <Paragraph>{item.name}</Paragraph>
@@ -34,7 +35,7 @@ const CalendarScreen = () => {
                 style={{ backgroundColor: Colors.grey300 }}
                 source={{
                   uri:
-                    "https://www.ecosia.org/images?q=plante#id=8DBE4130ACA3A224C46D8CE5811649A941BC7302",
+                    'https://www.ecosia.org/images?q=plante#id=8DBE4130ACA3A224C46D8CE5811649A941BC7302',
                 }}
               />
             </View>
@@ -46,7 +47,7 @@ const CalendarScreen = () => {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <Agenda
+      {/* <Agenda
         renderEmptyDate={() => {
           return <View />;
         }}
@@ -63,7 +64,8 @@ const CalendarScreen = () => {
           agendaDayNumColor: theme.colors.primary900,
           agendaTodayColor: theme.colors.secondary900,
         }}
-      />
+      /> */}
+      <FabButton />
     </SafeAreaView>
   );
 };

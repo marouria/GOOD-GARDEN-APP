@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { Controller, useForm } from "react-hook-form";
-import { Platform, View } from "react-native";
-import { Button, Headline, TextInput } from "react-native-paper";
-import DateTimePicker from "@react-native-community/datetimepicker";
+import React, { useState } from 'react';
+import { Controller, useForm } from 'react-hook-form';
+import { Platform, View } from 'react-native';
+import { Button, Headline, TextInput } from 'react-native-paper';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 type FormValues = {
   title: string;
@@ -19,7 +19,7 @@ const TaskForm = () => {
   } = useForm<FormValues>();
 
   const onSubmit = (data) => {
-    alert("Task added to calendar");
+    alert('Task added to calendar');
     console.log(data);
   };
 
