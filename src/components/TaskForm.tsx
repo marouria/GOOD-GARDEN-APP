@@ -58,12 +58,11 @@ const TaskForm = () => {
             value={value}
             mode="date"
             is24Hour={true}
-            display="spinner"
             onChange={onChangeDate}
+            display="spinner"
           />
         )}
         name="date"
-        defaultValue={new Date(1598051730000)}
       />
       <Button onPress={handleSubmit(onSubmit)}>Submit</Button>
     </View>
