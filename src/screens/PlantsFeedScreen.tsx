@@ -1,15 +1,15 @@
-import React, { Component, useState } from "react";
-import { Text, SafeAreaView, StyleSheet } from "react-native";
-import AppLayout from "../components/AppLayout";
-import PlantCard from "../components/PlantCard";
-import { usePlants } from "../hooks/usePlants";
-import Spinner from "react-native-loading-spinner-overlay";
-import { Searchbar, Title } from "react-native-paper";
+import React, { Component, useState } from 'react';
+import { Text, SafeAreaView, StyleSheet } from 'react-native';
+import AppLayout from '../components/AppLayout';
+import PlantCard from '../components/PlantCard';
+import { usePlants } from '../hooks/usePlants';
+import Spinner from 'react-native-loading-spinner-overlay';
+import { Searchbar, Title } from 'react-native-paper';
 
 const PlantsFeedScreen = (props) => {
   const { isLoading, isError, data } = usePlants();
 
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState('');
 
   const onChangeSearch = (query) => setSearchQuery(query);
 
@@ -17,7 +17,7 @@ const PlantsFeedScreen = (props) => {
     return (
       <Spinner
         visible={true}
-        textContent={"Loading..."}
+        textContent={'Loading...'}
         textStyle={styles.spinnerTextStyle}
       />
     );
@@ -39,8 +39,8 @@ const PlantsFeedScreen = (props) => {
         <Title>Mes plantes</Title>
         {data.results
           .filter((plant) => plant.name.includes(searchQuery))
-          .map((filteredPlant) => {
-            return <PlantCard plant={filteredPlant}></PlantCard>;
+          .map((filteredPlant, index) => {
+            return <PlantCard key={index} plant={filteredPlant}></PlantCard>;
           })}
       </SafeAreaView>
     </AppLayout>
@@ -49,7 +49,7 @@ const PlantsFeedScreen = (props) => {
 
 const styles = StyleSheet.create({
   spinnerTextStyle: {
-    color: "#FFF",
+    color: '#FFF',
   },
 });
 
