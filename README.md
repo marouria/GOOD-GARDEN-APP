@@ -15,6 +15,10 @@ yarn
 yarn ios|android
 ```
 
-### Some more
+### Links
 
 [web app](http://www.good-garden.club/)
+
+### API
+
+[good-garden API](http://www.good-garden.club/api/v1/plants)
